@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAQIB VERCEL DEMO</title>
+  
+  <style type="text/css">
+  	body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.glowing-text {
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.glowing-text span {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="glowing-text" id="glowText"></div>
+|<script type="text/javascript">
+	const textContainer = document.getElementById('glowText');
+const text = 'Saqib Zahoor';
+const words = text.split(' ');
+
+words.forEach((word, index) => {
+  const span = document.createElement('span');
+  span.textContent = word;
+  span.style.animationDelay = `${index * 0.5}s`;
+  textContainer.appendChild(span);
+});
+
+</script>
+</body>
+</html>
+
